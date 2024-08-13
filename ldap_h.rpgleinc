@@ -1,0 +1,226 @@
+**FREE
+
+// Ports
+Dcl-C LDAP_Port 389;
+Dcl-C LDAPS_Port 636;
+
+// Error Codes
+Dcl-C LDAP_SUCCESS x'00';
+Dcl-C LDAP_OPERATIONS_ERROR x'01';
+Dcl-C LDAP_PROTOCOL_ERROR x'02';
+Dcl-C LDAP_TIMELIMIT_EXCEEDED x'03';
+Dcl-C LDAP_SIZELIMIT_EXCEEDED x'04';
+Dcl-C LDAP_COMPARE_FALSE x'05';
+Dcl-C LDAP_COMPARE_TRUE x'06';
+Dcl-C LDAP_STRONG_AUTH_NOT_SUPPORTED x'07';
+Dcl-C LDAP_STRONG_AUTH_REQUIRED x'08';
+Dcl-C LDAP_PARTIAL_RESULTS x'09';
+Dcl-C LDAP_REFERRAL x'0A';
+Dcl-C LDAP_ADMIN_LIMIT_EXCEEDED x'0B';
+Dcl-C LDAP_UNAVAILABLE_CRITICAL_EXTENSION x'0C';
+Dcl-C LDAP_NO_SUCH_ATTRIBUTE x'10';
+Dcl-C LDAP_UNDEFINED_TYPE x'11';
+Dcl-C LDAP_INAPPROPRIATE_MATCHING x'12';
+Dcl-C LDAP_CONSTRAINT_VIOLATION x'13';
+Dcl-C LDAP_TYPE_OR_VALUE_EXISTS x'14';
+Dcl-C LDAP_INVALID_SYNTAX x'15';
+Dcl-C LDAP_NO_SUCH_OBJECT x'20';
+Dcl-C LDAP_ALIAS_PROBLEM x'21';
+Dcl-C LDAP_INVALID_DN_SYNTAX x'22';
+Dcl-C LDAP_IS_LEAF x'23';
+Dcl-C LDAP_ALIAS_DEREF_PROBLEM x'24';
+Dcl-C LDAP_INAPPROPRIATE_AUTH x'30';
+Dcl-C LDAP_INVALID_CREDENTIALS x'31';
+Dcl-C LDAP_INSUFFICIENT_ACCESS x'32';
+Dcl-C LDAP_BUSY x'33';
+Dcl-C LDAP_UNAVAILABLE x'34';
+Dcl-C LDAP_UNWILLING_TO_PERFORM x'35';
+Dcl-C LDAP_LOOP_DETECT x'36';
+Dcl-C LDAP_NAMING_VIOLATION x'40';
+Dcl-C LDAP_OBJECT_CLASS_VIOLATION x'41';
+Dcl-C LDAP_NOT_ALLOWED_ON_NONLEAF x'42';
+Dcl-C LDAP_NOT_ALLOWED_ON_RDN x'43';
+Dcl-C LDAP_ALREADY_EXISTS x'44';
+Dcl-C LDAP_NO_OBJECT_CLASS_MODS x'45';
+Dcl-C LDAP_RESULTS_TOO_LARGE x'46';
+Dcl-C LDAP_AFFECTS_MULTIPLE_DSAS x'47';
+Dcl-C LDAP_OTHER x'50';
+Dcl-C LDAP_SERVER_DOWN x'51';
+Dcl-C LDAP_LOCAL_ERROR x'52';
+Dcl-C LDAP_ENCODING_ERROR x'53';
+Dcl-C LDAP_DECODING_ERROR x'54';
+Dcl-C LDAP_TIMEOUT x'55';
+Dcl-C LDAP_AUTH_UNKNOWN x'56';
+Dcl-C LDAP_FILTER_ERROR x'57';
+Dcl-C LDAP_USER_CANCELLED x'58';
+Dcl-C LDAP_PARAM_ERROR x'59';
+Dcl-C LDAP_NO_MEMORY x'5A';
+Dcl-C LDAP_CONNECT_ERROR x'5b';
+Dcl-C LDAP_NOT_SUPPORTED x'5c';
+Dcl-C LDAP_CONTROL_NOT_FOUND x'5d';
+Dcl-C LDAP_NO_RESULTS_RETURNED x'5e';
+Dcl-C LDAP_MORE_RESULTS_TO_RETURN x'5f';
+Dcl-C LDAP_URL_ERR_NOTLDAP x'60';
+Dcl-C LDAP_URL_ERR_NODN x'61';
+Dcl-C LDAP_URL_ERR_BADSCOPE x'62';
+Dcl-C LDAP_URL_ERR_MEM x'63';
+Dcl-C LDAP_CLIENT_LOOP x'64';
+Dcl-C LDAP_REFERRAL_LIMIT_EXCEEDED x'65';
+Dcl-C LDAP_SSL_ALREADY_INITIALIZED x'70';
+Dcl-C LDAP_SSL_INITIALIZE_FAILED x'71';
+Dcl-C LDAP_SSL_INITIALIZE_NOT_CALLED x'72';
+Dcl-C LDAP_SSL_PARAM_ERROR x'73';
+Dcl-C LDAP_SSL_HANDSHAKE_FAILED x'74';
+Dcl-C LDAP_SSL_GET_CIPHER_FAILED x'75';
+Dcl-C LDAP_SSL_NOT_AVAILABLE x'76';
+Dcl-C LDAP_SSL_KEYRING_NOT_FOUND x'77';
+Dcl-C LDAP_SSL_PASSWORD_NOT_SPECIFIED x'78';
+Dcl-C LDAP_NO_EXPLICIT_OWNER x'80';
+Dcl-C LDAP_NO_LOCK x'81';
+Dcl-C LDAP_DNS_NO_SERVERS x'85';
+Dcl-C LDAP_DNS_TRUNCATED x'86';
+Dcl-C LDAP_DNS_INVALID_DATA x'87';
+Dcl-C LDAP_DNS_RESOLVE_ERROR x'88';
+Dcl-C LDAP_DNS_CONF_FILE_ERROR x'89';
+Dcl-C LDAP_XLATE_E2BIG x'A0';
+Dcl-C LDAP_XLATE_EINVAL x'A1';
+Dcl-C LDAP_XLATE_EILSEQ x'A2';
+Dcl-C LDAP_XLATE_NO_ENTRY x'A3';
+Dcl-C LDAP_REG_FILE_NOT_FOUND x'B0';
+Dcl-C LDAP_REG_CANNOT_OPEN x'B1';
+Dcl-C LDAP_REG_ENTRY_NOT_FOUND x'B2';
+Dcl-C LDAP_CONF_FILE_NOT_OPENED x'C0';
+Dcl-C LDAP_PLUGIN_NOT_LOADED x'C1';
+Dcl-C LDAP_PLUGIN_FUNCTION_NOT_RESOLVED x'C2';
+Dcl-C LDAP_PLUGIN_NOT_INITIALIZED x'C3';
+Dcl-C LDAP_PLUGIN_COULD_NOT_BIND x'C4';
+Dcl-C LDAP_SASL_GSS_NO_SEC_CONTEXT x'D0';
+
+// Scopes
+Dcl-C LDAP_SCOPE_BASE x'00';
+Dcl-C LDAP_SCOPE_ONELEVEL x'01';
+Dcl-C LDAP_SCOPE_SUBTREE x'02';
+
+// Data Structures
+Dcl-S p_Timeval pointer;
+Dcl-Ds timeval qualified based(p_Timeval) align;
+    tv_sec int(10);
+    tv_usec int(10);
+End-Ds;
+
+Dcl-S p_Berval pointer;
+Dcl-Ds berval qualified based(p_Berval) align;
+    bv_len uns(10);
+    bv_val pointer;
+End-Ds;
+
+Dcl-S p_LDAPMOD pointer;
+Dcl-Ds LdapMod based(p_LDAPMOD) align;
+    mod_op       int(10);
+    mod_type     pointer;
+    modv_strvals pointer;
+    modv_bvals   pointer overlay(modv_strvals);
+End-Ds;
+
+// Prototypes
+Dcl-Pr ldap_init pointer extproc('ldap_init');
+    host pointer value options(*string);
+    port int(10) value;
+End-Pr;
+
+Dcl-Pr ldap_simple_bind_s int(10) extproc('ldap_simple_bind_s');
+    ld pointer value;
+    dn pointer value options(*string);
+    pw pointer value options(*string);
+End-Pr;
+
+Dcl-Pr ldap_unbind int(10) extproc('ldap_unbind');
+    ld pointer value;
+End-Pr;
+
+Dcl-Pr ldap_err2string pointer extproc('ldap_err2string');
+    error int(10) value;
+End-Pr;
+
+Dcl-Pr ldap_search_s int(10) extproc('ldap_search_s');
+    ld pointer value;
+    base pointer value options(*string);
+    scope int(10) value;
+    filter pointer value options(*string);
+    attrs pointer value;
+    attrsonly int(10) value;
+    res pointer;
+End-Pr;
+
+Dcl-Pr ldap_first_entry pointer extproc('ldap_first_entry');
+    ld pointer value;
+    result pointer value;
+End-Pr;
+
+Dcl-Pr ldap_next_entry pointer extproc('ldap_next_entry');
+    ld pointer value;
+    entry pointer value;
+End-Pr;
+
+Dcl-Pr ldap_first_attribute pointer extproc('ldap_first_attribute');
+    ld pointer value;
+    entry pointer value;
+    berptr pointer;
+End-Pr;
+
+Dcl-Pr ldap_next_attribute pointer extproc('ldap_next_attribute');
+    ld pointer value;
+    entry pointer value;
+    berptr pointer value;
+End-Pr;
+
+Dcl-Pr ldap_get_dn pointer extproc('ldap_get_dn');
+    ld pointer value;
+    entry pointer value;
+End-Pr;
+
+Dcl-Pr ldap_msgfree int(10) extproc('ldap_msgfree');
+    msg pointer value;
+End-Pr;
+
+Dcl-Pr ldap_memfree extproc('ldap_memfree');
+    msg pointer value;
+End-Pr;
+
+Dcl-Pr ldap_value_free extproc('ldap_value_free');
+    mem pointer value;
+End-Pr;
+
+Dcl-Pr ldap_get_errno int(10) extproc('ldap_get_errno');
+    ld pointer value;
+End-Pr;
+
+Dcl-Pr ldap_count_entries int(10) extproc('ldap_count_entries');
+    ld pointer value;
+    result pointer value;
+End-Pr;
+
+Dcl-Pr ldap_count_attributes int(10) extproc('ldap_count_attributes');
+    ld pointer value;
+    result pointer value;
+End-Pr;
+
+Dcl-Pr ldap_count_values int(10) extproc('ldap_count_values');
+    values pointer value;
+End-Pr;
+
+Dcl-Pr ldap_get_values pointer extproc('ldap_get_values');
+    ld pointer value;
+    entry pointer value;
+    attr pointer value options(*string);
+End-Pr;
+
+Dcl-Pr ldap_compare_s int(10) extproc('ldap_compare_s');
+    ld pointer value;
+    dn pointer value options(*string);
+    attr pointer value options(*string);
+    value pointer value options(*string);
+End-Pr;
+
+
+ 

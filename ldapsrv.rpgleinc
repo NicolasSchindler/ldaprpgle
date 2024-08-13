@@ -1,0 +1,45 @@
+**FREE
+//---------------------------------------------------------------
+// Datastructure
+//---------------------------------------------------------------
+Dcl-DS ConnectionDS qualified;
+    Host char(256);
+    Port int(5);
+    User char(256);
+    Password char(256);
+End-DS;
+
+Dcl-DS AttributeDS qualified;
+    Attribute char(256);
+    Values char(256) dim(256);
+End-DS;
+
+Dcl-DS DNDS qualified;
+    Name char(256);
+    Attributes likeds(AttributeDS) dim(64);
+End-DS;
+
+//---------------------------------------------------------------
+// Prototypes
+//---------------------------------------------------------------
+Dcl-Pr LDAPSRV_GET_DN char(256);
+    pConnection likeds(ConnectionDS);
+    pBase char(256) value;
+    pFilter char(256) value;
+End-Pr;
+
+Dcl-Pr LDAPSRV_GET_DN_WITH_ATTRIBUTES likeds(DNDS);
+    pConnection likeds(ConnectionDS);
+    pBase char(256) value;
+    pFilter char(256) value;
+    pAttributes char(256) dim(32);
+End-Pr;
+
+Dcl-Pr LDAPSRV_HAS_DN_ATTRIBUTE_WITH_VALUE ind;
+    pConnection likeds(ConnectionDS);
+    pDN char(256) value;
+    pAttributes char(256) value;
+    pValue char(256) value;
+End-Pr;
+
+ 

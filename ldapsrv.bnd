@@ -1,0 +1,5 @@
+             STRPGMEXP  PGMLVL(*CURRENT) SIGNATURE('V1.0')
+                EXPORT     SYMBOL('LDAPSRV_GET_DN')
+                EXPORT     SYMBOL('LDAPSRV_GET_DN_WITH_ATTRIBUTES')
+                EXPORT     SYMBOL('LDAPSRV_HAS_DN_ATTRIBUTE_WITH_VALUE')
+             ENDPGMEXP                            
