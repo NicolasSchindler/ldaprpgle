@@ -105,7 +105,7 @@ Dcl-Proc LDAPSRV_GET_DN_WITH_ATTRIBUTES Export;
             returnDS.Name = %str(dn:256);
             attribute = ldap_first_attribute(LDAP:entry:berptr);
             z = 1;
-            Dow attribute <> *NULL and z <= 64;
+            Dow attribute <> *NULL and z <= 32;
                 returnDS.Attributes(z).Attribute = %str(attribute:256);
                 values = ldap_get_values(LDAP:entry:attribute);
                 If values <> *NULL;
