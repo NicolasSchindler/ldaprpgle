@@ -16,7 +16,7 @@ End-DS;
 
 Dcl-DS DNDS qualified;
     Name char(256);
-    Attributes likeds(AttributeDS) dim(64);
+    Attributes likeds(AttributeDS) dim(32);
 End-DS;
 
 //---------------------------------------------------------------
