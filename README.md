@@ -2,7 +2,7 @@
 
 In this Project i provide a simple example how to connect to a LDAP Server from IBM i. 
 I added some Constants and Functions from the LDAP Headerfile provided by IBM, not all Functions are implemented in this example. 
-The Serviceprogramm is written in Fixed Format RPGLE and uses the provided LDAP API written in C, which is included in the OS.
+The Serviceprogramm is written in Free Format RPGLE and uses the provided LDAP API written in C, which is included in the OS.
 The Documentation of the LDAP API can be found [here](https://www.ibm.com/docs/api/v1/content/ssw_ibm_i_75/apis/dirserv2.htm)
 
 Thanks to @ScottKlement, who has published an example of a copybook on his site, which I have used as a guide. You can find his example [here](https://www.scottklement.com/rpg/copybooks/ldap_h.rpgle.txt).
